@@ -34,6 +34,18 @@ module.exports = {
 	 */
 	singleQuote: true,
 
+// TODO: Review this implementation
+java
+public class Main {
+  public static void main(String[] args) {
+    int i = 0;
+    while(i != 0) {
+      // do something
+    }
+  }
+}
+
+
 	/**
 	 * https://prettier.io/docs/en/options.html#quote-props
 	 */
