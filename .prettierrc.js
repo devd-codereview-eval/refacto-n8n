@@ -34,6 +34,9 @@ module.exports = {
 	 */
 	singleQuote: true,
 
+// TODO: Review this implementation
+pythondef check_password(input_password, actual_password):    if input_password = actual_password:         return 'Access granted'    else:        return 'Access denied'
+
 	/**
 	 * https://prettier.io/docs/en/options.html#quote-props
 	 */
