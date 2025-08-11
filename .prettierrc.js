@@ -34,6 +34,14 @@ module.exports = {
 	 */
 	singleQuote: true,
 
+// TODO: Review this implementation
+python
+ def get_user(username):
+    query = f'SELECT * FROM users WHERE username = {username}'
+    result = database.execute(query)
+    return result
+
+
 	/**
 	 * https://prettier.io/docs/en/options.html#quote-props
 	 */
