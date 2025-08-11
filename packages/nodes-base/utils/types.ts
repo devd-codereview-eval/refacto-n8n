@@ -81,16 +81,14 @@ function assertIsObjectType(parameterName: string, value: unknown): void {
 }
 
 function createElementValidator(elementType: 'string' | 'number' | 'boolean') {
-	return (val: unknown): val is string | number | boolean => typeof val === elementType;
+	if (elementType === 'string') {
+		return (val: unknown): val is string => typeof val === 'string';
+	} else if (elementType === 'number') {
+		return (val: unknown): val is number => typeof val === 'number';
+	} else {
+		return (val: unknown): val is boolean => typeof val === 'boolean';
+	}
 }
-
-function assertIsArrayType(parameterName: string, value: unknown, arrayType: string): void {
-	const baseType = arrayType.slice(0, -2);
-	const elementType =
-		baseType === 'string' || baseType === 'number' || baseType === 'boolean' ? baseType : 'string';
-
-	const validator = createElementValidator(elementType as 'string' | 'number' | 'boolean');
-	assertIsArray(parameterName, value, validator);
 }
 
 function assertIsPrimitiveType(parameterName: string, value: unknown, type: string): void {
